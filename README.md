@@ -4,6 +4,14 @@ DoubtClear is an AI-powered doubt-solving web app for school students. A student
 
 The goal of this project is to make academic help simple, fast, and student-friendly.
 
+---
+## Screenshot
+   <p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1Um2dbXSTSAzq4lV-m_CJc0fhSQcj1qkF" width="350"/>
+  <img src="https://drive.google.com/uc?export=view&id=1ecLFq5tKyD6Be9OEeWhvWSzDFAi5XNIz" width="300"/>
+</p>
+
+
 ## DeployLink
    LINK : https://doubt-solver-21.vercel.app/
 
