@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DoubtClear
 
-## Getting Started
+DoubtClear is an AI-powered doubt-solving web app for school students. A student can choose their class and subject, type an academic question, and get a clear structured answer with an explanation, step-by-step solution, real-world analogy, concept name, and practice question.
 
-First, run the development server:
+The goal of this project is to make academic help simple, fast, and student-friendly.
+
+## Features
+
+- Select class level and subject
+- Ask academic doubts in a simple text box
+- Generate AI answers using Gemini
+- Show answers in a student-friendly structure
+- Include step-by-step explanations for math and science problems
+- Provide a real-world analogy to make concepts easier to understand
+- Add a practice question with hidden answer
+- Handle short questions like "formula of cone"
+- Clean formula formatting for readable answers
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Gemini API
+- Vercel for deployment
+
+## How It Works
+
+1. The student selects their class and subject.
+2. The student enters a doubt or question.
+3. The app sends the question to the backend API route.
+4. The backend calls the Gemini model with a tutor-style prompt.
+5. The generated answer is streamed back and displayed in a clean format.
+
+## Project Structure
+
+```text
+app/
+  api/solve/route.ts    Backend API route for generating answers
+  page.tsx              Main app page
+components/             UI components
+hooks/                  React hooks
+lib/                    Prompts, constants, and shared types
+public/                 Static assets
+```
+
+## Setup Locally
+
+Clone the project and install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env.local` file in the root folder:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+On Windows PowerShell, if `npm run dev` is blocked by script policy, use:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm.cmd run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open the app:
 
-## Learn More
+```text
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+This project can be deployed on Vercel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Before deploying, add this environment variable in Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+After adding or changing environment variables, redeploy the project.
+
+## Future Improvement
+
+A useful improvement would be photo upload with OCR. Students could upload a photo of a textbook question or handwritten doubt. The app would extract the text from the image using OCR, then send the extracted question to Gemini for solving. This would make the app easier to use for students who do not want to type long questions.
+
+## About
+
+This project was built as a student-focused AI learning tool. It demonstrates frontend development, API integration, prompt design, and deployment using modern web technologies.
